@@ -1,16 +1,190 @@
+/* GLOBAL STYLES */
+
 body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-li,
-p {
+.App {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 16px;
+  background: url(https://www.toptal.com/designers/subtlepatterns/patterns/lightpaperfibers.png);
+}
+
+button {
+  background: none;
+  border: 0;
   margin: 0;
   padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
 }
-a {
-  color: inherit;
-  text-decoration: none;
+button:hover {
+  color: rgb(68, 3, 94);
+  cursor: pointer;
+}
+
+.App {
+  display: flex;
+}
+
+/* SIDEBAR STYLES */
+
+.app-sidebar {
+  width: 30%;
+  height: 100vh;
+  border-right: 1px solid #ddd;
+}
+
+.app-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+  border-bottom: 2px solid #ddd;
+}
+.app-sidebar-header h1 {
+  margin: 0;
+}
+
+.app-sidebar-notes {
+  height: calc(100vh - 78px);
+  /*change the overflow to scroll when needed*/
+  overflow-y: scroll;
+}
+.app-sidebar-note {
+  padding: 25px;
+  cursor: pointer;
+}
+.sidebar-note-title {
+  display: flex;
+  justify-content: space-between;
+}
+.app-sidebar-note button {
+  color: crimson;
+  font-size: 14px;
+  font-weight: lighter;
+}
+.app-sidebar-note p {
+  margin: 10px 0;
+}
+.app-sidebar-note small {
+  display: block;
+  color: #999;
+}
+
+.app-sidebar-note:hover {
+  background: #ddd;
+}
+.app-sidebar-note.active,
+.app-sidebar-note.active small {
+  /*#08c*/
+  background: rgb(68, 3, 94);
+  color: white;
+}
+
+/* NOTE EDITOR/PREVIEW (MAIN) STYLES */
+
+.app-main {
+  width: 100%;
+  height: 100vh;
+}
+.app-main-note-edit,
+.app-main-note-preview {
+  height: 50vh;
+}
+
+.app-main-note-edit #body{
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+
+.no-active-note {
+  width: 100%;
+  height: 100vh;
+  line-height: 100vh;
+  text-align: center;
+  font-size: 2rem;
+  color: #999;
+}
+
+/* Editing */
+
+
+.app-main-note-edit input,
+textarea {
+  display: block;
+  border: none;
+  margin-bottom: 0px;
+  width: 100%;
+  height: calc(50vh - 130px);
+  padding: 10px;
+  resize: none;
+  font-size: inherit;
+  font-family: inherit;
+}
+.app-main-note-edit input {
+  height: 50px;
+  font-size: 2rem;
+  border-bottom: 1px solid #ddd;
+  
+}
+
+/* Preview */
+.app-main-note-preview {
+  border-top: 1px solid #ddd;
+  overflow-y: scroll;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.preview-title {
+  padding: 25px 25px 0 25px;
+  margin: 0;
+}
+
+.markdown-preview {
+  padding: 0 25px 25px 25px;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+/* TOPBAR STYLES */
+
+.app-topbar {
+  width: 100%;
+  height: 10vh;
+  border-bottom: 1px solid #ddd;
+  background-color: white;
+}
+
+.app-topbar-header{
+  text-align: center;
+}
+
+.subtext{
+  text-align: center;
+  color: grey;
+  margin-top: -20px;
+}
+
+.app-topbar-button{
+  margin-right: 95%;
+  margin-top: -60px;
+}
+
+button:hover {
+  color: rgb(68, 3, 94);
+}
+
+.text-options{
+  border-bottom: 2px solid #ddd;
+  
+  padding: 5px;
+}
+
+.ql-editor{
+  min-height: 500px;
 }
