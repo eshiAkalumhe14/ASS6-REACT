@@ -1,5 +1,5 @@
 import ReactQuill from "react-quill/lib";
-import React, { useState } from "react";
+
 import "../node_modules/react-quill/dist/quill.snow.css";
 import "./index.css";
 
